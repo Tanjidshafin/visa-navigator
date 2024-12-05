@@ -1,0 +1,116 @@
+[
+    {
+      "id":1,
+      "country": "Canada",
+      "country_image": "https://example.com/images/canada.jpg",
+      "visa_type": "Tourist Visa",
+      "processing_time": "15 days",
+      "required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Recent passport-sized photograph",
+        "Proof of financial means",
+        "Travel itinerary"
+      ],
+      "description": "A tourist visa allows you to visit Canada for leisure or recreation purposes.",
+      "age_restriction": "18+",
+      "fee": "$100",
+      "validity": "6 months",
+      "application_method": "Online"
+    },
+    {
+      "id":2,
+      "country": "Australia",
+      "country_image": "https://example.com/images/australia.jpg",
+      "visa_type": "Work Visa",
+      "processing_time": "30 days",
+      "required_documents": [
+        "Valid passport",
+        "Job offer letter",
+        "Visa application form",
+        "Proof of qualifications",
+        "Recent passport-sized photograph"
+      ],
+      "description": "The work visa allows you to work in Australia for a specified period.",
+      "age_restriction": "21-55",
+      "fee": "$300",
+      "validity": "2 years",
+      "application_method": "In-person"
+    },
+    {
+      "id":3,
+      "country": "United States",
+      "country_image": "https://example.com/images/usa.jpg",
+      "visa_type": "Student Visa",
+      "processing_time": "20 days",
+      "required_documents": [
+        "Valid passport",
+        "I-20 form",
+        "Visa application form",
+        "Proof of financial support",
+        "Academic records"
+      ],
+      "description": "A student visa allows you to study at a U.S. institution for the duration of your course.",
+      "age_restriction": "16+",
+      "fee": "$160",
+      "validity": "Duration of Course",
+      "application_method": "Online"
+    },
+    {
+      "id":4,
+      "country": "Germany",
+      "country_image": "https://example.com/images/germany.jpg",
+      "visa_type": "Business Visa",
+      "processing_time": "10 days",
+      "required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Business invitation letter",
+        "Proof of financial means",
+        "Travel insurance"
+      ],
+      "description": "A business visa enables you to attend meetings or conferences in Germany.",
+      "age_restriction": "18+",
+      "fee": "$80",
+      "validity": "3 months",
+      "application_method": "In-person"
+    },
+    {
+      "id":5,
+      "country": "Japan",
+      "country_image": "https://example.com/images/japan.jpg",
+      "visa_type": "Tourist Visa",
+      "processing_time": "7 days",
+      "required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Recent photograph",
+        "Proof of accommodation",
+        "Travel itinerary"
+      ],
+      "description": "This visa lets you explore Japan for leisure and cultural experiences.",
+      "age_restriction": "18+",
+      "fee": "$30",
+      "validity": "90 days",
+      "application_method": "Online"
+    },
+    {
+      "id":6,
+      "country": "United Kingdom",
+      "country_image": "https://example.com/images/uk.jpg",
+      "visa_type": "Visitor Visa",
+      "processing_time": "25 days",
+      "required_documents": [
+        "Valid passport",
+        "Visa application form",
+        "Proof of financial means",
+        "Accommodation details",
+        "Travel history"
+      ],
+      "description": "The visitor visa is for leisure trips, visiting family, or attending events in the UK.",
+      "age_restriction": "16+",
+      "fee": "$125",
+      "validity": "6 months",
+      "application_method": "Online"
+    }
+  ]
