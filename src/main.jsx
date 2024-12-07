@@ -17,7 +17,7 @@ import Errora from './components/Errorar.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import 'react-tooltip/dist/react-tooltip.css';
 const router = createBrowserRouter([
   {
     path: '/',
