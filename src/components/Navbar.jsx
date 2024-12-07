@@ -229,6 +229,16 @@ const Navbar = () => {
             className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             My Visa Applications
           </NavLink>
+          {user ? (
+            <NavLink
+              onClick={handleLogout}
+              to='/signin'
+              className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
+              Logout
+            </NavLink>
+          ) : (
+            ''
+          )}
         </ul>
       </div>
     </nav>
