@@ -12,8 +12,9 @@ import ApplyNow from './pages/ApplyNow.jsx';
 import MyVisaApp from './pages/MyVisaApp';
 import Signin from './components/Signin.jsx';
 import SignUp from './components/SignUp.jsx';
-import PrivateRoute from './components/PrivateRoute.jsx';
+
 import MyAddedVisa from './pages/MyAddedVisa.jsx';
+
 
 import 'react-tooltip/dist/react-tooltip.css';
 import Errora from './components/Errorar.jsx';
