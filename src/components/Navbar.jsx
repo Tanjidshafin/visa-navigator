@@ -193,7 +193,7 @@ const Navbar = () => {
         )}
       </div>
 
-      <div className='dropdown dropdown-end'>
+      <div className='dropdown md:hidden block dropdown-end'>
         <div tabIndex={0} role='button' className='m-1'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

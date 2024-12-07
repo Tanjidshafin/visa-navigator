@@ -104,7 +104,7 @@ const MyVisaApp = () => {
                 <span className='absolute -bottom-6 left-1/2 z-20 h-0 w-0 -translate-x-1/2 transform rounded-full bg-gradient-to-tr from-[#0d87f8]/50 to-[#70c4ff]/50 duration-500 hover:duration-300 group-hover:h-[60px] group-hover:w-[60px] '></span>
               </div>
 
-              <div className='min-w-[250px] max-w-[350px] space-y-12 rounded-br-lg rounded-tr-lg bg-white p-10 text-center shadow-[0px_7px_30px_2px_rgba(100,100,111,0.2)] dark:bg-[#18181B] md:w-[350px] dark:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.8)]'>
+              <div className='min-w-[250px] max-w-[350px] space-y-12 rounded-br-lg rounded-tr-lg bg-white p-10 text-center shadow-[0px_7px_30px_2px_rgba(100,100,111,0.2)]  md:w-[350px] dark:shadow-[0px_2px_8px_0px_rgba(0,0,0,0.8)]'>
                 <div className='space-y-1'>
                   <h2 className='text-center text-2xl font-medium text-gray-700 dark:text-white/90 lg:text-3xl'>
                     {app.firstName + ' ' + app.lastName}
