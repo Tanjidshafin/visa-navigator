@@ -9,8 +9,7 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
   const [theme, setTheme] = useState('light');
-  const 
-  ThemeChanger = () => {
+  const ThemeChanger = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
@@ -43,7 +42,7 @@ const Navbar = () => {
         <NavLink
           onClick={() => (isActive === 'home' ? setIsActive('home') : setIsActive('home'))}
           to='/'
-          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] pl-2 transition-all duration-300 before:left-0 cursor-pointer ${
             isActive === 'home' ? 'before:w-full text-[#3B9DF8]' : ''
           } capitalize`}>
           Home
@@ -51,7 +50,7 @@ const Navbar = () => {
         <NavLink
           onClick={() => (isActive === 'allvisa' ? setIsActive('allvisa') : setIsActive('allvisa'))}
           to='/allVisa'
-          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] pl-2 transition-all duration-300 before:left-0 cursor-pointer ${
             isActive === 'allvisa' ? 'before:w-full text-[#3B9DF8]' : ''
           } capitalize`}>
           All Visas
@@ -59,7 +58,7 @@ const Navbar = () => {
         <NavLink
           onClick={() => (isActive === 'addvisa' ? setIsActive('addvisa') : setIsActive('addvisa'))}
           to='/AddVisa'
-          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] pl-2 transition-all duration-300 before:left-0 cursor-pointer ${
             isActive === 'addvisa' ? 'before:w-full text-[#3B9DF8]' : ''
           } capitalize`}>
           Add Visa
@@ -67,7 +66,7 @@ const Navbar = () => {
         <NavLink
           onClick={() => (isActive === 'myaddedvisa' ? setIsActive('myaddedvisa') : setIsActive('myaddedvisa'))}
           to='/MyAddedVisa'
-          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] pl-2 transition-all duration-300 before:left-0 cursor-pointer ${
             isActive === 'myaddedvisa' ? 'before:w-full text-[#3B9DF8]' : ''
           } capitalize`}>
           My Added Visas
@@ -77,7 +76,7 @@ const Navbar = () => {
             isActive === 'myvisaApplication' ? setIsActive('myvisaApplication') : setIsActive('myvisaApplication')
           }
           to='/myVisaApplication'
-          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] pl-2 transition-all duration-300 before:left-0 cursor-pointer ${
             isActive === 'myvisaApplication' ? 'before:w-full text-[#3B9DF8]' : ''
           } capitalize`}>
           My Visa applications
@@ -192,62 +191,46 @@ const Navbar = () => {
             </NavLink>
           </div>
         )}
-
-        <button>
-          <label
-            htmlFor='check'
-            className='flex lg:hidden flex-col gap-[5px] p-3 rounded-lg hover:bg-sky-100 cursor-pointer'>
-            <input
-              onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-              type='checkbox'
-              id='check'
-              className='peer/check hidden'
-            />
-            <span className='w-8 h-1 rounded-lg inline-block bg-gray-500 peer-checked/check:rotate-45 peer-checked/check:translate-y-2 duration-300'></span>
-            <span className='w-8 h-1 rounded-lg inline-block bg-gray-500 peer-checked/check:scale-0 duration-300'></span>
-            <span className='w-8 h-1 rounded-lg inline-block bg-gray-500 peer-checked/check:-rotate-45 peer-checked/check:-translate-y-2 duration-300'></span>
-          </label>
-        </button>
       </div>
 
-      <aside
-        className={` ${
-          mobileSidebarOpen ? 'translate-x-0 opacity-100 z-20' : 'translate-x-[200px] opacity-0 z-[-1]'
-        } lg:hidden bg-white boxShadow p-4 text-center absolute top-[55px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300`}>
-        <div className='relative mb-4'>
-          <input
-            className='py-1.5 pr-4 w-full pl-10 rounded-full border border-gray-200 outline-none focus:border-[#3B9DF8]'
-            placeholder='Search...'
-          />
-
-          <IoIosSearch className='absolute top-[8px] left-3 text-gray-500 text-[1.3rem]' />
+      <div className='dropdown dropdown-end'>
+        <div tabIndex={0} role='button' className='m-1'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            strokeWidth={1.5}
+            stroke='currentColor'
+            className='size-6'>
+            <path strokeLinecap='round' strokeLinejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25' />
+          </svg>
         </div>
-        <ul className='items-start gap-[20px] text-[1rem] text-gray-600 flex flex-col'>
-          <NavLink to='/' className='hover:text-[#3B9DF8] transition-all duration-500 cursor-poin ter capitalize'>
+        <ul tabIndex={0} className='dropdown-content menu gap-5 bg-base-100 rounded-box z-[1] w-52 p-2 shadow'>
+          <NavLink to='/' className=' hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             Home
           </NavLink>
           <NavLink
             to='/allVisa'
-            className='hover:text-[#3B9DF8] transition-all duration-500 cursor-poin ter capitalize'>
+            className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             All Visas
           </NavLink>
           <NavLink
             to='/addVisa'
-            className='hover:text-[#3B9DF8] transition-all duration-500 cursor-poin ter capitalize'>
+            className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             Add Visa
           </NavLink>
           <NavLink
             to='/MyAddedVisa'
-            className='hover:text-[#3B9DF8] transition-all duration-500 cursor-poin ter capitalize'>
+            className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             My Added Visa
           </NavLink>
           <NavLink
             to='/myVisaApplication'
-            className='hover:text-[#3B9DF8] transition-all duration-500 cursor-poin ter capitalize'>
+            className='hover:text-[#3B9DF8] pl-2 transition-all duration-500 cursor-poin ter capitalize'>
             My Visa Applications
           </NavLink>
         </ul>
-      </aside>
+      </div>
     </nav>
   );
 };
