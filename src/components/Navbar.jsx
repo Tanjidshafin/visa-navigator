@@ -114,7 +114,7 @@ const Navbar = () => {
           </svg>
         </label>
         {user ? (
-          <div className=' md:relative block'>
+          <div className=' md:relative hidden md:block'>
             <button
               onClick={() => (toggle !== 'active' ? setToggle('active') : setToggle(''))}
               type='button'

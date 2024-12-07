@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../src/firebase.init';
+import { toast } from 'react-toastify';
 
 export const AppContext = createContext();
 const AppContextProvider = (props) => {
@@ -70,6 +71,7 @@ const AppContextProvider = (props) => {
       const response = await axios.delete(`https://visa-server-tau.vercel.app/visa/${id}`);
       if (response.data.success) {
         setVisas((prevVisas) => prevVisas.filter((visa) => visa._id !== id));
+        toast.success("Deleted Visa")
         console.log(response.data.message);
       } else {
         console.error(response.data.message);
@@ -85,6 +87,7 @@ const AppContextProvider = (props) => {
       if (response.data.success) {
         setApplications((prevApplications) => prevApplications.filter((app) => app._id !== id));
         console.log(response.data.message);
+        toast.success("Deleted Visa Application")
       } else {
         console.error(response.data.message);
       }
