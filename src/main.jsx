@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute element={<ApplyNow />} />,
         loader: async ({ params }) => {
           try {
-            const { data } = await axios.get(`http://localhost:5000/visa/${params.id}`);
+            const { data } = await axios.get(`https://visa-server-tau.vercel.app/visa/${params.id}`);
             return data;
           } catch (error) {
             console.log(error);
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute element={<PerVisa />} />,
         loader: async ({ params }) => {
           try {
-            const { data } = await axios.get(`http://localhost:5000/visa/${params.id}`);
+            const { data } = await axios.get(`https://visa-server-tau.vercel.app/visa/${params.id}`);
             return data;
           } catch (error) {
             console.log(error);

@@ -27,7 +27,7 @@ const AppContextProvider = (props) => {
 
   const fetchVisaData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/visa');
+      const response = await axios.get('https://visa-server-tau.vercel.app/visa');
       setVisas(response.data);
     } catch (error) {
       console.error(error);
@@ -36,7 +36,7 @@ const AppContextProvider = (props) => {
 
   const fetchVisaApplications = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/applications');
+      const response = await axios.get('https://visa-server-tau.vercel.app/applications');
       setApplications(response.data);
     } catch (error) {
       console.error(error);
@@ -53,7 +53,7 @@ const AppContextProvider = (props) => {
     const applicationWithTimestamp = { ...applicationData, showTime: timestamp };
 
     try {
-      const response = await axios.post('http://localhost:5000/add-visa-application', applicationWithTimestamp);
+      const response = await axios.post('https://visa-server-tau.vercel.app/add-visa-application', applicationWithTimestamp);
       if (response.data.success) {
         setApplications((prevApplications) => [...prevApplications, applicationWithTimestamp]);
         console.log(applicationWithTimestamp);
@@ -67,7 +67,7 @@ const AppContextProvider = (props) => {
 
   const deleteVisa = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/visa/${id}`);
+      const response = await axios.delete(`https://visa-server-tau.vercel.app/visa/${id}`);
       if (response.data.success) {
         setVisas((prevVisas) => prevVisas.filter((visa) => visa._id !== id));
         console.log(response.data.message);
@@ -81,7 +81,7 @@ const AppContextProvider = (props) => {
 
   const deleteApplication = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/applications/${id}`);
+      const response = await axios.delete(`https://visa-server-tau.vercel.app/applications/${id}`);
       if (response.data.success) {
         setApplications((prevApplications) => prevApplications.filter((app) => app._id !== id));
         console.log(response.data.message);

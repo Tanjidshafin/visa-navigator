@@ -45,7 +45,7 @@ const AddVisa = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('http://localhost:5000/add-visa', formData);
+      const { data } = await axios.post('https://visa-server-tau.vercel.app/add-visa', formData);
       if (data.success) {
         await fetchVisaData();
         toast.success("Visa Added")
