@@ -8,7 +8,7 @@ const AllVisa = () => {
   const [open, setOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState(null);
   const dropDownRef = useRef(null);
-  const items = ['Fee', 'Country Name', 'Visa'];
+  const items = ['Fee', 'Country Name', 'Visa Type'];
 
   useEffect(() => {
     const close = (e) => {
@@ -30,9 +30,9 @@ const AllVisa = () => {
         case 'Fee':
           return b.fee - a.fee;
         case 'Country Name':
-          return b.countryName.localeCompare(a.countryName);
+          return a.countryName.localeCompare(b.countryName);
         case 'Visa':
-          return b.visaType.localeCompare(a.visaType);
+          return a.visaType.localeCompare(b.visaType);
         default:
           return 0;
       }
