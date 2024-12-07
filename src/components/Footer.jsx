@@ -18,7 +18,7 @@ const Footer = () => {
 
             {user ? (
               <NavLink
-                to='/allVisa'
+                to='/ allVisa'
                 className='mt-8 inline-block rounded-full border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500'>
                 See All Visas
               </NavLink>
