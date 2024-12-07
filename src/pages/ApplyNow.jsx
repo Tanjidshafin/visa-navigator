@@ -36,7 +36,7 @@ const ApplyNow = () => {
       applicationMethod: visa.applicationMethod,
     };
     addVisaApplications(applicationData);
-
+toast.success("Added Application")
     navigate('/myVisaApplication');
     setEmail('');
     setFirstName('');
