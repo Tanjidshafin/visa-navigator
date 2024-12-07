@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
+  const [isActive, setIsActive] = useState('home');
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const { user, setUser } = useContext(AppContext);
   const [toggle, setToggle] = useState('');
@@ -33,32 +34,45 @@ const Navbar = () => {
       </div>
       <ul className='items-center gap-[20px] text-[1rem] text-[#424242] lg:flex hidden'>
         <NavLink
+          onClick={() => (isActive === 'home' ? setIsActive('home') : setIsActive('home'))}
           to='/'
-          className={(isActive) =>
-            `before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
-              isActive ? 'before:w-full text-[#3B9DF8]' : ''
-            } capitalize`
-          }>
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+            isActive === 'home' ? 'before:w-full text-[#3B9DF8]' : ''
+          } capitalize`}>
           Home
         </NavLink>
         <NavLink
+          onClick={() => (isActive === 'allvisa' ? setIsActive('allvisa') : setIsActive('allvisa'))}
           to='/allVisa'
-          className='before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize'>
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+            isActive === 'allvisa' ? 'before:w-full text-[#3B9DF8]' : ''
+          } capitalize`}>
           All Visas
         </NavLink>
         <NavLink
+          onClick={() => (isActive === 'addvisa' ? setIsActive('addvisa') : setIsActive('addvisa'))}
           to='/AddVisa'
-          className='before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize'>
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+            isActive === 'addvisa' ? 'before:w-full text-[#3B9DF8]' : ''
+          } capitalize`}>
           Add Visa
         </NavLink>
         <NavLink
+          onClick={() => (isActive === 'myaddedvisa' ? setIsActive('myaddedvisa') : setIsActive('myaddedvisa'))}
           to='/MyAddedVisa'
-          className='before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize'>
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+            isActive === 'myaddedvisa' ? 'before:w-full text-[#3B9DF8]' : ''
+          } capitalize`}>
           My Added Visas
         </NavLink>
         <NavLink
+          onClick={() =>
+            isActive === 'myvisaApplication' ? setIsActive('myvisaApplication') : setIsActive('myvisaApplication')
+          }
           to='/myVisaApplication'
-          className='before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer capitalize'>
+          className={`before:w-0 hover:before:w-full before:bg-[#3B9DF8] before:h-[2px] before:transition-all before:duration-300 before:absolute relative before:rounded-full before:bottom-[-2px] hover:text-[#3B9DF8] transition-all duration-300 before:left-0 cursor-pointer ${
+            isActive === 'myvisaApplication' ? 'before:w-full text-[#3B9DF8]' : ''
+          } capitalize`}>
           My Visa applications
         </NavLink>
       </ul>
