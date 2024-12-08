@@ -1,19 +1,42 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
+import { InfinitySpin } from 'react-loader-spinner';
+import axios from 'axios';
 
 const MyVisaApp = () => {
-  const { addApplications, fetchVisaApplications, user, deleteApplication } = useContext(AppContext);
+  const { user, deleteApplication } = useContext(AppContext);
   const [searchQuery, setSearchQuery] = useState('');
-  const userApplications = addApplications.filter((app) => app.email === user?.email);
+  const [loading, setLoading] = useState(false);
+  const [applications, setApplications] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
+    const fetchVisaApplications = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('https://visa-server-tau.vercel.app/applications');
+        setApplications(response.data);
+        setLoading(false);
+        console.log(applications);
+      } catch (error) {
+        console.error(error);
+      }
+    };
     fetchVisaApplications();
-  }, [fetchVisaApplications]);
+  }, [user]);
+  const userApplications = applications.filter((app) => app.email === user?.email);
   const filteredApplications = userApplications.filter((app) =>
     app.countryName.toLowerCase().includes(searchQuery.toLowerCase())
   );
+  if (loading) {
+    return (
+      <div className='flex min-h-screen items-center justify-center'>
+        <InfinitySpin visible={true} width='200' color='#4fa94d' ariaLabel='infinity-spin-loading' />
+      </div>
+    );
+  }
   return (
-    <div className='mx-auto md:h-[40rem] overflow-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
+    <div className='mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8'>
       <div className='flex justify-between'>
         <header>
           <h2 className='text-xl font-bold text-gray-900 sm:text-3xl'>My Visa Applications</h2>
@@ -61,7 +84,7 @@ const MyVisaApp = () => {
           </div>
         </div>
       </div>
-      <div className='mt-8 grid grid-cols-1 lg:grid-cols-2 gap-10'>
+      <div className='mt-8 grid md:h-[40rem] overflow-auto grid-cols-1 lg:grid-cols-2 gap-10'>
         {filteredApplications.length > 0 ? (
           filteredApplications.map((app, index) => (
             <div key={index} className='flex flex-col items-center justify-center md:flex-row'>

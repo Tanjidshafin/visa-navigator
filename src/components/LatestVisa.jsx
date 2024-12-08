@@ -24,7 +24,7 @@ const LatestVisa = () => {
               <p>No Visa's To Show at this moment...</p>
             ) : (
               visas.slice(0, 6).map((visa) => (
-                <li>
+                <li key={visa._id}>
                   <div className='max-w-sm rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300'>
                     <div className='relative'>
                       <img
@@ -122,9 +122,9 @@ const LatestVisa = () => {
                   viewBox='0 0 24 24'
                   xmlns='http://www.w3.org/2000/svg'>
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M14 5l7 7m0 0l-7 7m7-7H3'></path>
                 </svg>
               </span>
@@ -136,9 +136,9 @@ const LatestVisa = () => {
                   viewBox='0 0 24 24'
                   xmlns='http://www.w3.org/2000/svg'>
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M14 5l7 7m0 0l-7 7m7-7H3'></path>
                 </svg>
               </span>

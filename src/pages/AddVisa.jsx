@@ -6,7 +6,7 @@ import { AppContext } from '../../context/AppContext';
 import { toast } from 'react-toastify';
 
 const AddVisa = () => {
-  const { user, fetchVisaData } = useContext(AppContext);
+  const { user, fetchVisaData, loading, setLoading } = useContext(AppContext);
   const date = new Date().toLocaleDateString();
   const time = new Date().toLocaleTimeString();
   const [formData, setFormData] = useState({
@@ -45,16 +45,18 @@ const AddVisa = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true);
       const { data } = await axios.post('https://visa-server-tau.vercel.app/add-visa', formData);
       if (data.success) {
         await fetchVisaData();
-        toast.success("Visa Added")
+        toast.success('Visa Added');
+        setLoading(false);
         navigate('/');
       }
       console.log(data);
     } catch (error) {
       console.error('Error adding visa:', error);
-      toast.warning("Failed to add")
+      toast.warning('Failed to add');
     }
   };
 

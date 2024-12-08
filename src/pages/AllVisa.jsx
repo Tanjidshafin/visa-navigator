@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../../context/AppContext';
 import { NavLink } from 'react-router';
 import { toast } from 'react-toastify';
+import { InfinitySpin } from 'react-loader-spinner';
 
 const AllVisa = () => {
-  const { visas } = useContext(AppContext);
+  const { visas, loading } = useContext(AppContext);
   const [open, setOpen] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState(null);
   const dropDownRef = useRef(null);
@@ -38,6 +39,13 @@ const AllVisa = () => {
       }
     });
   };
+  if (loading) {
+    return (
+      <div className='flex min-h-screen items-center justify-center'>
+        <InfinitySpin visible={true} width='200' color='#4fa94d' ariaLabel='infinity-spin-loading' />
+      </div>
+    );
+  }
 
   return (
     <div className='mx-auto md:h-[40rem] overflow-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8'>

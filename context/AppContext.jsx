@@ -10,6 +10,7 @@ const AppContextProvider = (props) => {
     const savedUser = localStorage.getItem('user');
     return savedUser ? JSON.parse(savedUser) : null;
   });
+  const [loading, setLoading] = useState(false);
   const [visas, setVisas] = useState([]);
   const [addApplications, setApplications] = useState([]);
 
@@ -28,8 +29,10 @@ const AppContextProvider = (props) => {
 
   const fetchVisaData = async () => {
     try {
+      setLoading(true);
       const response = await axios.get('https://visa-server-tau.vercel.app/visa');
       setVisas(response.data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -37,8 +40,10 @@ const AppContextProvider = (props) => {
 
   const fetchVisaApplications = async () => {
     try {
+      setLoading(true);
       const response = await axios.get('https://visa-server-tau.vercel.app/applications');
       setApplications(response.data);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -54,10 +59,15 @@ const AppContextProvider = (props) => {
     const applicationWithTimestamp = { ...applicationData, showTime: timestamp };
 
     try {
-      const response = await axios.post('https://visa-server-tau.vercel.app/add-visa-application', applicationWithTimestamp);
+      setLoading(true);
+      const response = await axios.post(
+        'https://visa-server-tau.vercel.app/add-visa-application',
+        applicationWithTimestamp
+      );
       if (response.data.success) {
         setApplications((prevApplications) => [...prevApplications, applicationWithTimestamp]);
         console.log(applicationWithTimestamp);
+        setLoading(false);
       } else {
         console.error(response.data.message);
       }
@@ -68,10 +78,12 @@ const AppContextProvider = (props) => {
 
   const deleteVisa = async (id) => {
     try {
+      setLoading(true);
       const response = await axios.delete(`https://visa-server-tau.vercel.app/visa/${id}`);
       if (response.data.success) {
         setVisas((prevVisas) => prevVisas.filter((visa) => visa._id !== id));
-        toast.success("Deleted Visa")
+        toast.success('Deleted Visa');
+        setLoading(false);
         console.log(response.data.message);
       } else {
         console.error(response.data.message);
@@ -83,11 +95,13 @@ const AppContextProvider = (props) => {
 
   const deleteApplication = async (id) => {
     try {
+      setLoading(true);
       const response = await axios.delete(`https://visa-server-tau.vercel.app/applications/${id}`);
       if (response.data.success) {
         setApplications((prevApplications) => prevApplications.filter((app) => app._id !== id));
+        setLoading(false);
         console.log(response.data.message);
-        toast.success("Deleted Visa Application")
+        toast.success('Deleted Visa Application');
       } else {
         console.error(response.data.message);
       }
@@ -108,6 +122,8 @@ const AppContextProvider = (props) => {
     fetchVisaApplications,
     deleteVisa,
     deleteApplication,
+    loading,
+    setLoading,
   };
 
   return <AppContext.Provider value={value}>{props.children}</AppContext.Provider>;

@@ -111,7 +111,7 @@ const Banner = () => {
         style={{ transform: `translateX(-${currentSlider * 100}%)` }}>
         {carouselImages.map((slide, idx) => (
           <div
-            key={slide}
+            key={idx}
             className='relative min-w-full h-[40rem] bg-black/20 sm:h-96 md:h-[30rem] lg:h-[52rem]'
             style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className='absolute flex items-center justify-center lg:justify-start inset-0 bg-gradient-to-b from-black/50 to-transparent'>
