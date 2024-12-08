@@ -4,30 +4,46 @@ import { InfinitySpin } from 'react-loader-spinner';
 import axios from 'axios';
 
 const MyVisaApp = () => {
-  const { user, deleteApplication } = useContext(AppContext);
+  const { user } = useContext(AppContext);
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [applications, setApplications] = useState([]);
-
+  const deleteApplication = async (id) => {
+    try {
+      setLoading(true);
+      const response = await axios.delete(`https://visa-server-tau.vercel.app/applications/${id}`);
+      if (response.data.success) {
+        setApplications((prevApplications) => prevApplications.filter((app) => app._id !== id));
+        setLoading(false);
+        console.log(response.data.message);
+        toast.success('Deleted Visa Application');
+      } else {
+        console.error(response.data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting application:', error);
+    }
+  };
+  const userApplications = applications.filter((app) => app.email === user?.email);
+  const filteredApplications = userApplications.filter((app) =>
+    app.countryName.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   useEffect(() => {
-    setLoading(true);
     const fetchVisaApplications = async () => {
       try {
         setLoading(true);
         const response = await axios.get('https://visa-server-tau.vercel.app/applications');
         setApplications(response.data);
-        setLoading(false);
-        console.log(applications);
+        if (response.status === 200) {
+          setLoading(false);
+        }
+        console.log();
       } catch (error) {
         console.error(error);
       }
     };
     fetchVisaApplications();
-  }, [user]);
-  const userApplications = applications.filter((app) => app.email === user?.email);
-  const filteredApplications = userApplications.filter((app) =>
-    app.countryName.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  }, []);
   if (loading) {
     return (
       <div className='flex min-h-screen items-center justify-center'>

@@ -20,6 +20,7 @@ const PerVisa = () => {
 
                   <p className='mt-4 font-semibold text-gray-700'>Visa Type: {visa.visaType}</p>
                   <p className='mt-4 font-semibold text-gray-700'>Processing Time: {visa.processingTime}</p>
+                  <p className='mt-4 font-semibold text-gray-700'>Description: {visa.description}</p>
 
                   <div className='mt-4 text-gray-700 space-y-1'>
                     Required Documents:{' '}

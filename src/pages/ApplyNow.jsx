@@ -17,8 +17,8 @@ const ApplyNow = () => {
   }, [data.data._id]);
 
   const handleSubmit = (e) => {
-    setLoading(true);
     e.preventDefault();
+
     if (email !== user.email) {
       toast.warning('The email you entered does not match your registered email');
       return;
@@ -37,9 +37,9 @@ const ApplyNow = () => {
       applicationMethod: visa.applicationMethod,
     };
     addVisaApplications(applicationData);
-    setLoading(false);
+
     toast.success('Added Application');
-    navigate('/myVisaApplication');
+    navigate('/allVisa');
     setEmail('');
     setFirstName('');
     setLastName('');
