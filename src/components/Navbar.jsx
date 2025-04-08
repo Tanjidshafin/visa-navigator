@@ -138,9 +138,8 @@ const Navbar = () => {
               </button>
               <Tooltip id="user-tooltip" place="left" />
               <div
-                className={`absolute end-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white shadow-xl ${
-                  toggle === "active" ? "block" : "hidden"
-                }`}
+                className={`absolute end-0 z-10 mt-2 w-56 divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white shadow-xl ${toggle === "active" ? "block" : "hidden"
+                  }`}
                 role="menu"
               >
                 <div className="p-2">

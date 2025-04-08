@@ -13,7 +13,6 @@ const AppContextProvider = (props) => {
   const [loading, setLoading] = useState(false);
   const [visas, setVisas] = useState([]);
   const [addApplications, setApplications] = useState([]);
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -26,7 +25,6 @@ const AppContextProvider = (props) => {
 
     return () => unsubscribe();
   }, []);
-
   const fetchVisaData = async () => {
     try {
       setLoading(true);
