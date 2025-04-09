@@ -14,7 +14,7 @@ const PerVisa = () => {
 
   return (
     visa && (
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-screen-2xl px-2 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Country Banner */}
           <div

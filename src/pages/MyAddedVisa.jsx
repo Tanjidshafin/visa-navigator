@@ -9,7 +9,7 @@ const MyAddedVisa = () => {
   const myVisas = visas.filter((app) => app?.email === user?.email)
 
   return (
-    <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-screen-2xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
         {/* Header Section */}
         <div className="mb-10">

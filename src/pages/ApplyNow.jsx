@@ -50,7 +50,7 @@ const ApplyNow = () => {
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 py-12">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl px-2 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             Apply for <span className="text-blue-600">{visa.visaType}</span> Visa

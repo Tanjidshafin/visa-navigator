@@ -63,7 +63,7 @@ const MyVisaApp = () => {
   }
 
   return (
-    <div className="mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-screen-2xl px-2 py-12 sm:px-6 lg:px-8">
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
