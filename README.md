@@ -137,7 +137,7 @@ MONGODB_URI=your_mongodb_connection_string
 This project was fully developed and maintained by:
 
 **Tanjid Karim Shafin**  
-[LinkedIn](https://linkedin.com/in/your-profile) • [GitHub](https://github.com/your-username) • [Portfolio](https://your-portfolio-link.com)
+[LinkedIn](https://www.linkedin.com/in/tanjidshafin-dev/) • [Portfolio](https://tanjidshafin.netlify.app/)
 
 ---
 
