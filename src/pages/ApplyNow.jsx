@@ -163,7 +163,7 @@ const ApplyNow = () => {
 
           {/* Right Column - Application Form */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="bg-white rounded-2xl shadow-lg p-5">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Personal Information</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -41,7 +41,7 @@ const PerVisa = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-3">
             {/* Main Content */}
             <div className="md:col-span-2">
               <div className="prose max-w-none">
